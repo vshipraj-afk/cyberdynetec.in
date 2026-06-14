@@ -1,28 +1,29 @@
 import express from "express";
-import OpenAI from "openai";
 import cors from "cors";
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+app.get("/", (req, res) => {
+  res.send("Cyberdyne API Online");
+});
+
+app.get("/health", (req, res) => {
+  res.json({ status: "ok" });
 });
 
 app.post("/api/assistant", async (req, res) => {
-  try {
-    const { question } = req.body;
+  const { question } = req.body || {};
 
-    const response = await client.responses.create({
-      model: "gpt-4.1-mini",
-      input: `You are Cyberdyne Assistant. Answer clearly and briefly: ${question}`,
-    });
+  console.log("QUESTION:", question);
 
-    res.json({ answer: response.output_text });
-  } catch (err) {
-    res.status(500).json({ answer: "Cyberdyne Assistant is offline." });
-  }
+  res.json({
+    answer: `Cyberdyne received: ${question}`
+  });
 });
 
-app.listen(process.env.PORT || 3001);
+app.listen(process.env.PORT || 3001, () => {
+  console.log("Cyberdyne API running");
+});
