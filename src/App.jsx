@@ -30,6 +30,7 @@ export default function App() {
         <div className="links">
           <a href="#yardfindx">YardFindX</a>
           <a href="#systems">Systems</a>
+          <a href="#orbit">Orbit</a>
           <a href="#geotech">GeoTech</a>
           <a href="#contact">Contact</a>
         </div>
@@ -70,6 +71,64 @@ export default function App() {
         <div className="card"><h3>Nexus</h3><p>Unified command and control dashboard for field operations.</p></div>
         <div className="card"><h3>Project Nandi</h3><p>Autonomous ground mobility platform for inspection, patrol, and remote operations.</p></div>
         <div className="card"><h3>Cyberdyne Labs</h3><p>Research in AI, robotics, computer vision, and autonomous navigation.</p></div>
+      </section>
+
+
+      <section id="orbit" className="panel orbit-panel">
+        <h2>Cyberdyne Orbit</h2>
+        <p>
+          A global command-globe concept layer for conflicts, weather, earthquakes,
+          satellites, maritime movement, space systems, and live geopolitical awareness.
+        </p>
+
+        <div className="orbit-command">
+          <div className="orbit-globe">
+            <div className="orbit-scan"></div>
+            <div className="orbit-dot india">INDIA</div>
+            <div className="orbit-dot hormuz">HORMUZ</div>
+            <div className="orbit-dot europe">EUROPE</div>
+            <div className="orbit-dot pacific">PACIFIC</div>
+            <div className="orbit-ring r1"></div>
+            <div className="orbit-ring r2"></div>
+            <div className="orbit-ring r3"></div>
+          </div>
+
+          <div className="orbit-console">
+            <span>GLOBAL COMMAND LAYERS</span>
+            <h3>Conflict Globe Meets GeoTech</h3>
+            <p>
+              Cyberdyne Orbit connects the earlier Conflict Globe vision with live
+              environmental, orbital, maritime, and geopolitical intelligence.
+            </p>
+
+            <div className="layer-grid">
+              <button>Weather</button>
+              <button>Earthquakes</button>
+              <button>Conflicts</button>
+              <button>Satellites</button>
+              <button>ISS</button>
+              <button>Maritime</button>
+              <button>India</button>
+              <button>Rest of World</button>
+              <button>News</button>
+            </div>
+          </div>
+        </div>
+
+        <div className="orbit-feeds">
+          <div>
+            <span>INDIA LAYER</span>
+            <p>ISRO, IMD, ports, shipping, weather, logistics, roads, rail, and disaster alerts.</p>
+          </div>
+          <div>
+            <span>WORLD LAYER</span>
+            <p>NASA, NOAA, USGS, ESA, ISS, global weather, seismic activity, and conflicts.</p>
+          </div>
+          <div>
+            <span>CONFLICT LAYER</span>
+            <p>Hotspots, live event tiles, geopolitical updates, routes, ports, and strategic chokepoints.</p>
+          </div>
+        </div>
       </section>
 
       <section id="geotech" className="panel globe-panel">

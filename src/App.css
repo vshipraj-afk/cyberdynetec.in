@@ -517,3 +517,172 @@ body{
     grid-template-columns:1fr;
   }
 }
+
+/* CYBERDYNE ORBIT / CONFLICT GLOBE */
+.orbit-panel{
+  position:relative;
+  overflow:hidden;
+}
+
+.orbit-command{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  align-items:center;
+  margin-top:34px;
+}
+
+.orbit-globe{
+  position:relative;
+  width:min(500px,86vw);
+  aspect-ratio:1;
+  margin:auto;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,.18), transparent 12%),
+    radial-gradient(circle at 50% 50%, rgba(0,234,255,.20), rgba(0,10,25,.75) 64%, rgba(0,0,0,.95)),
+    repeating-radial-gradient(circle, rgba(0,255,210,.11) 0 2px, transparent 3px 19px);
+  border:1px solid rgba(0,234,255,.55);
+  box-shadow:
+    0 0 100px rgba(0,234,255,.22),
+    inset 0 0 80px rgba(0,234,255,.16);
+  animation:globeFloat 6s ease-in-out infinite;
+}
+
+.orbit-globe::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  background:
+    linear-gradient(90deg, transparent 48%, rgba(0,234,255,.35) 49%, transparent 51%),
+    repeating-linear-gradient(90deg, transparent 0 34px, rgba(0,234,255,.08) 35px),
+    repeating-linear-gradient(0deg, transparent 0 34px, rgba(0,234,255,.08) 35px);
+  mask-image:radial-gradient(circle, black 63%, transparent 72%);
+  animation:globeSpin 20s linear infinite;
+}
+
+.orbit-scan{
+  position:absolute;
+  inset:9%;
+  border-radius:50%;
+  background:conic-gradient(from 0deg, rgba(0,255,210,.35), transparent 22%, transparent 100%);
+  animation:coreSpin 5s linear infinite;
+  opacity:.75;
+}
+
+.orbit-ring{
+  position:absolute;
+  inset:8%;
+  border-radius:50%;
+  border:1px solid rgba(0,234,255,.3);
+  transform:rotateX(65deg) rotateZ(20deg);
+}
+
+.orbit-ring.r2{
+  inset:18%;
+  transform:rotateX(70deg) rotateZ(-38deg);
+  border-color:rgba(150,80,255,.35);
+}
+
+.orbit-ring.r3{
+  inset:-2%;
+  transform:rotateX(72deg) rotateZ(90deg);
+  border-color:rgba(0,255,180,.25);
+}
+
+.orbit-dot{
+  position:absolute;
+  z-index:4;
+  padding:8px 11px;
+  border-radius:999px;
+  border:1px solid rgba(0,234,255,.7);
+  background:rgba(0,0,0,.62);
+  color:#eaf8ff;
+  font-size:10px;
+  letter-spacing:1.4px;
+  box-shadow:0 0 26px rgba(0,234,255,.48);
+}
+
+.orbit-dot::after{
+  content:"";
+  position:absolute;
+  inset:-8px;
+  border-radius:999px;
+  border:1px solid rgba(0,234,255,.25);
+  animation:radiate 2s infinite ease-out;
+}
+
+.orbit-dot.india{left:58%;top:50%}
+.orbit-dot.hormuz{left:50%;top:43%}
+.orbit-dot.europe{left:43%;top:28%}
+.orbit-dot.pacific{left:72%;top:48%}
+
+.orbit-console{
+  padding:32px;
+  border-radius:28px;
+  background:rgba(0,0,0,.34);
+  border:1px solid rgba(0,234,255,.24);
+  box-shadow:0 0 55px rgba(0,234,255,.08);
+}
+
+.orbit-console span,
+.orbit-feeds span{
+  display:block;
+  color:#00eaff;
+  font-size:11px;
+  letter-spacing:2px;
+  margin-bottom:12px;
+}
+
+.orbit-console h3{
+  font-size:30px;
+  margin:0 0 16px;
+}
+
+.layer-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:22px;
+}
+
+.layer-grid button{
+  border:1px solid rgba(0,234,255,.35);
+  background:rgba(0,0,0,.38);
+  color:#c9f7ff;
+  border-radius:999px;
+  padding:11px 12px;
+  font-size:11px;
+  letter-spacing:1px;
+}
+
+.layer-grid button:hover{
+  background:rgba(0,234,255,.18);
+  box-shadow:0 0 30px rgba(0,234,255,.28);
+}
+
+.orbit-feeds{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:26px;
+}
+
+.orbit-feeds div{
+  padding:22px;
+  border-radius:22px;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(0,234,255,.18);
+}
+
+.orbit-feeds p{
+  font-size:14px;
+}
+
+@media(max-width:900px){
+  .orbit-command,
+  .orbit-feeds{
+    grid-template-columns:1fr;
+  }
+}
