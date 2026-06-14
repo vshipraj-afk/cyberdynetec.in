@@ -136,87 +136,120 @@ export default function App() {
       </section>
 
 
-      <section id="orbit" className="panel orbit-panel">
-        <h2>Cyberdyne Orbit</h2>
-        <p>
-          Latest geopolitical conflict monitor with verified news links and
-          short video-report access from trusted publishers.
-        </p>
+      
+<section id="orbit" className="panel orbit-panel">
+  <h2>Cyberdyne Orbit</h2>
 
-        <div className="orbit-command minimal-conflict">
-          <div className="orbit-console full">
-            <span>LIVE CONFLICT LAYER</span>
-            <h3>Current Conflict Intelligence</h3>
-            <p>
-              Cyberdyne Orbit tracks active conflict zones through public news
-              sources and verified reporting. Video links open publisher pages
-              where available.
-            </p>
+  <p>
+    A planetary conflict-intelligence layer for monitoring geopolitical activity,
+    strategic chokepoints, public reporting, and emerging global security events.
+  </p>
 
-            <div className="conflict-video-grid">
-              <a className="video-card" href="https://www.reuters.com/world/ukraine-russia-war/" target="_blank" rel="noreferrer">
-                <span>LIVE REPORTING</span>
-                <strong>Ukraine–Russia War</strong>
-                <p>Reuters live conflict coverage and video reports.</p>
-              </a>
+  <div className="orbit-command minimal-conflict">
+    <div className="orbit-console full">
+      <span>LIVE CONFLICT LAYER</span>
 
-              <a className="video-card" href="https://www.reuters.com/video/" target="_blank" rel="noreferrer">
-                <span>VIDEO SOURCE</span>
-                <strong>Reuters Video</strong>
-                <p>Verified short global news video reports.</p>
-              </a>
+      <h3>Current Conflict Intelligence</h3>
 
-              <a className="video-card" href="https://apnews.com/hub/world-news" target="_blank" rel="noreferrer">
-                <span>GLOBAL SOURCE</span>
-                <strong>AP World News</strong>
-                <p>Latest verified conflict and world event coverage.</p>
-              </a>
+      <p>
+        Cyberdyne Orbit continuously monitors emerging geopolitical developments,
+        military activity, strategic chokepoints, and global security events through
+        publicly available reporting, open-source intelligence, and real-time news
+        aggregation.
+      </p>
 
-              <a className="video-card" href="https://www.gdeltproject.org/" target="_blank" rel="noreferrer">
-                <span>DATA SOURCE</span>
-                <strong>GDELT Global Graph</strong>
-                <p>Near-real-time global news monitoring layer.</p>
-              </a>
-            </div>
-          </div>
+      <p>
+        The Conflict Layer is designed to provide situational awareness rather than
+        commentary, enabling users to observe events as they unfold across the
+        world's most strategically significant regions.
+      </p>
+
+      <div className="intel-grid">
+        <div>
+          <span>ACTIVE MONITORING</span>
+          <ul>
+            <li>Armed conflicts and military operations</li>
+            <li>Missile, drone and airstrike activity</li>
+            <li>Maritime security and strategic waterways</li>
+            <li>Border tensions and force mobilizations</li>
+            <li>Sanctions, diplomacy and ceasefire developments</li>
+            <li>Critical infrastructure and supply-chain disruptions</li>
+          </ul>
         </div>
 
-        <div className="orbit-feeds">
-          <div>
-            <span>ACTIVE HOTSPOTS</span>
-            <p>Ukraine, Middle East, Red Sea, South China Sea, border conflicts and strategic chokepoints.</p>
-          </div>
-          <div>
-            <span>VIDEO POLICY</span>
-            <p>Only verified publisher links. No autoplay of graphic strike footage. No unverified clips.</p>
-          </div>
-          <div>
-            <span>NEXT MODULE</span>
-            <p>Live GDELT conflict feed with headlines, countries, timestamps and source links.</p>
-
-            <div className="conflict-feed">
-              <p className="feed-status">{conflictStatus}</p>
-              {conflicts.length === 0 ? (
-                <p>Waiting for live items...</p>
-              ) : (
-                conflicts.map((item, index) => (
-                  <a
-                    key={index}
-                    href={item.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="conflict-item"
-                  >
-                    <span>{item.sourceCountry || "GLOBAL"} · {item.seendate || "LIVE"}</span>
-                    <strong>{item.title}</strong>
-                    <small>{item.domain}</small>
-                  </a>
-                ))
-              )}
-            </div>
-          </div>
+        <div>
+          <span>VERIFIED SOURCES</span>
+          <ul>
+            <li>Reuters</li>
+            <li>Associated Press</li>
+            <li>GDELT Global Event Database</li>
+            <li>International media networks</li>
+            <li>Public government releases</li>
+          </ul>
         </div>
-      </section>
+      </div>
+
+      <div className="conflict-feed">
+        <p className="feed-status">{conflictStatus}</p>
+
+        {conflicts.length === 0 ? (
+          <p>Waiting for live items...</p>
+        ) : (
+          conflicts.map((item, index) => (
+            <a
+              key={index}
+              href={item.url}
+              target="_blank"
+              rel="noreferrer"
+              className="conflict-item"
+            >
+              <span>
+                {(item.sourceCountry || "GLOBAL")} · {(item.seendate || "LIVE")}
+              </span>
+              <strong>{item.title}</strong>
+              <small>{item.domain}</small>
+            </a>
+          ))
+        )}
+      </div>
+    </div>
+  </div>
+
+  <div className="orbit-feeds">
+    <div>
+      <span>STRATEGIC HOTSPOTS</span>
+      <p>
+        Monitor regions experiencing elevated geopolitical activity, military
+        operations, security incidents, and strategic competition.
+      </p>
+    </div>
+
+    <div>
+      <span>VERIFIED REPORTING</span>
+      <p>
+        Access source-attributed reporting from established international news
+        organizations and public information channels.
+      </p>
+    </div>
+
+    <div>
+      <span>GLOBAL EVENT GRAPH</span>
+      <p>
+        Powered by GDELT and open-source intelligence feeds to identify emerging
+        developments and event relationships across the globe.
+      </p>
+    </div>
+
+    <div>
+      <span>AUTONOMOUS MONITORING</span>
+      <p>
+        Continuously updated conflict-awareness layer with automated data
+        collection, classification, and archival capability.
+      </p>
+    </div>
+  </div>
+</section>
+
 
       
 
