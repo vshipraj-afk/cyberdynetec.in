@@ -175,16 +175,16 @@ export default function App() {
 
             <div className="uv-box">
               <span>UV INDEX</span>
-              <strong>{localWeather ? localWeather.daily.uv_index_max[0] : "--"}</strong>
+              <strong>{localWeather ? (localWeather?.daily?.uv_index_max?.[0] ?? 0) : "--"}</strong>
               <p>
                 {localWeather
-                  ? localWeather.daily.uv_index_max[0] < 3
+                  ? (localWeather?.daily?.uv_index_max?.[0] ?? 0) < 3
                     ? "Low"
-                    : localWeather.daily.uv_index_max[0] < 6
+                    : (localWeather?.daily?.uv_index_max?.[0] ?? 0) < 6
                     ? "Moderate"
-                    : localWeather.daily.uv_index_max[0] < 8
+                    : (localWeather?.daily?.uv_index_max?.[0] ?? 0) < 8
                     ? "High"
-                    : localWeather.daily.uv_index_max[0] < 11
+                    : (localWeather?.daily?.uv_index_max?.[0] ?? 0) < 11
                     ? "Very High"
                     : "Extreme"
                   : "Daily max"}
@@ -195,7 +195,7 @@ export default function App() {
                   className="uv-marker"
                   style={{
                     left: localWeather
-                      ? `${Math.min((localWeather.daily.uv_index_max[0] / 11) * 100, 100)}%`
+                      ? `${Math.min(((localWeather?.daily?.uv_index_max?.[0] ?? 0) / 11) * 100, 100)}%`
                       : "0%",
                   }}
                 ></div>

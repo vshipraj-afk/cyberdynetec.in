@@ -1006,3 +1006,41 @@ body{
   font-size:13px;
   line-height:1.6;
 }
+
+/* Better UV Scale */
+
+.uv-scale{
+  position:relative;
+  height:10px;
+  margin-top:14px;
+  border-radius:999px;
+  background:linear-gradient(
+    90deg,
+    #4caf50 0%,
+    #cddc39 25%,
+    #ffeb3b 50%,
+    #ff9800 75%,
+    #f44336 100%
+  );
+}
+
+.uv-marker{
+  position:absolute;
+  top:-5px;
+  width:4px;
+  height:20px;
+  border-radius:999px;
+  background:#ffffff;
+  box-shadow:0 0 12px rgba(255,255,255,.6);
+}
+
+.uv-labels{
+  display:flex;
+  justify-content:space-between;
+  margin-top:8px;
+}
+
+.uv-labels span{
+  font-size:10px;
+  color:#7d8a82;
+}
