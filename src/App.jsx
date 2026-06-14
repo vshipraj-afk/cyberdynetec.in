@@ -278,6 +278,31 @@ export default function App() {
         collection, classification, and archival capability.
       </p>
     </div>
+
+    <div>
+      <span>VISUAL INTELLIGENCE</span>
+      <p>
+        Understanding the world through imagery. Future integration with
+        GDELT Visual Global Knowledge Graph for objects, locations,
+        infrastructure, disasters, transportation, and emerging events.
+      </p>
+    </div>
+
+    <div>
+      <span>NARRATIVE INTELLIGENCE</span>
+      <p>
+        Tracking the ideas, technologies, conflicts, scientific discoveries,
+        and global narratives shaping human civilization.
+      </p>
+    </div>
+
+    <div>
+      <span>HUMAN IMPACT ARCHIVE</span>
+      <p>
+        Nobel Prize winners, innovators, world leaders, scientific milestones,
+        historical newspapers, and major events preserved for future reference.
+      </p>
+    </div>
   </div>
 </section>
 
