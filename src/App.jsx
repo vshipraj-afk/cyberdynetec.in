@@ -47,7 +47,7 @@ export default function App() {
       <section id="contact" className="panel contact">
         <h2>Contact</h2>
         <p>Cyberdyne Technologies</p>
-        <p>Email: contact@cyberdyne.in</p>
+        <p>Email: rishivashistha@icloud.com</p>
       </section>
     </div>
   );
