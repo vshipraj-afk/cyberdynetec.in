@@ -106,36 +106,29 @@ export default function App() {
     return () => clearInterval(newsTimer);
   }, [conflicts]);
 
-  function askCyberdyne() {
-    const q = question.toLowerCase();
+  async function askCyberdyne() {
+    const q = question.trim();
 
-    if (!q.trim()) {
-      setAnswer("Ask about weather, solar activity, conflicts, YardFindX, Project Nandi, or the Archive.");
+    if (!q) {
+      setAnswer("Ask Cyberdyne anything.");
       return;
     }
 
-    if (q.includes("weather") || q.includes("uv") || q.includes("wind") || q.includes("sun")) {
-      setAnswer("Open Atmosphere: it shows local weather, wind, UV exposure, sunrise, sunset, and solar activity.");
-    } else if (q.includes("solar") || q.includes("flare")) {
-      setAnswer("Solar activity monitors flares, geomagnetic disturbances, and radio-blackout risk from NOAA space-weather feeds.");
-    } else if (q.includes("conflict") || q.includes("war") || q.includes("strike")) {
+    setAnswer("Cyberdyne is thinking...");
 
-      const orbit = document.getElementById("orbit");
-      if (orbit) {
-        orbit.scrollIntoView({ behavior: "smooth" });
-      }
+    try {
+      const res = await fetch("https://cyberdyne-api.onrender.com/api/assistant", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ question: q }),
+      });
 
-      setAnswer(
-        "CYBERDYNE ORBIT\n\nActive monitoring of geopolitical developments, military operations, strategic waterways, missile activity, border tensions and emerging events.\n\nLive feed available below."
-      );
-    } else if (q.includes("yardfindx") || q.includes("container")) {
-      setAnswer("YardFindX is Cyberdyne Technologies' flagship container intelligence platform for empty container yard operations.");
-    } else if (q.includes("nandi")) {
-      setAnswer("Project Nandi is Cyberdyne's autonomous ground systems concept for inspection, mobility, and remote operations.");
-    } else if (q.includes("archive") || q.includes("nobel") || q.includes("leader")) {
-      setAnswer("Cyberdyne Archive Engine is designed to preserve public metadata, Nobel records, leaders, newspapers, and major human-impact events.");
-    } else {
-      setAnswer("Cyberdyne is building software, intelligence, autonomous systems, planetary awareness, and knowledge infrastructure.");
+      const data = await res.json();
+      setAnswer(data.answer || "No response received.");
+    } catch (err) {
+      setAnswer("Cyberdyne Assistant could not connect to the AI server.");
     }
   }
 

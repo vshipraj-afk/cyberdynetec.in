@@ -1141,3 +1141,7 @@ section, .panel, .card{
 h1,h2,h3,p,span,strong,a,div{
   visibility:visible !important;
 }
+
+.assistant-answer{
+  white-space:pre-wrap;
+}
