@@ -195,6 +195,7 @@ export default function App() {
   <p>Protection Recommended</p>
 </div>
 
+          </div>
 
           <div className="solar-window">
 
