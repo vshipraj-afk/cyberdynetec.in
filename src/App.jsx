@@ -119,7 +119,15 @@ export default function App() {
     } else if (q.includes("solar") || q.includes("flare")) {
       setAnswer("Solar activity monitors flares, geomagnetic disturbances, and radio-blackout risk from NOAA space-weather feeds.");
     } else if (q.includes("conflict") || q.includes("war") || q.includes("strike")) {
-      setAnswer("Open Cyberdyne Orbit: it tracks conflict developments using verified public reporting and GDELT event intelligence.");
+
+      const orbit = document.getElementById("orbit");
+      if (orbit) {
+        orbit.scrollIntoView({ behavior: "smooth" });
+      }
+
+      setAnswer(
+        "CYBERDYNE ORBIT\n\nActive monitoring of geopolitical developments, military operations, strategic waterways, missile activity, border tensions and emerging events.\n\nLive feed available below."
+      );
     } else if (q.includes("yardfindx") || q.includes("container")) {
       setAnswer("YardFindX is Cyberdyne Technologies' flagship container intelligence platform for empty container yard operations.");
     } else if (q.includes("nandi")) {
