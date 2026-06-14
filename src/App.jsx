@@ -32,6 +32,7 @@ export default function App() {
           <a href="#systems">Systems</a>
           <a href="#orbit">Orbit</a>
           
+          <a href="#careers">Careers</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -132,6 +133,30 @@ export default function App() {
       </section>
 
       
+
+
+      <section id="careers" className="panel careers">
+        <h2>Careers</h2>
+        <p>
+          Cyberdyne Technologies is looking for people interested in software,
+          logistics technology, AI, data systems, robotics, and autonomous systems.
+        </p>
+
+        <div className="career-box">
+          <h3>Work With Us</h3>
+          <p>
+            If you want to contribute to YardFindX, Cyberdyne Orbit, Project Nandi,
+            or future Cyberdyne Labs systems, send your profile to us.
+          </p>
+
+          <a
+            className="btn"
+            href="mailto:rishivashistha@icloud.com?subject=Career%20Application%20-%20Cyberdyne%20Technologies&body=Hello%20Cyberdyne%20Technologies,%0A%0AI%20am%20interested%20in%20working%20with%20Cyberdyne.%0A%0AName:%0ARole%20Interested:%0AExperience:%0ALocation:%0APhone:%0ALinkedIn/GitHub/Portfolio:%0A%0ARegards,"
+          >
+            Apply by Email
+          </a>
+        </div>
+      </section>
 
       <section id="contact" className="panel contact">
         <h2>Contact</h2>
