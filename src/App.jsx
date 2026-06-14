@@ -72,9 +72,32 @@ export default function App() {
         <div className="card"><h3>Cyberdyne Labs</h3><p>Research in AI, robotics, computer vision, and autonomous navigation.</p></div>
       </section>
 
-      <section id="geotech" className="panel">
-        <h2>Live GeoTech Window</h2>
-        <p>Weather, seismic activity, space systems, satellites, maritime movement, and planetary awareness.</p>
+      <section id="geotech" className="panel globe-panel">
+        <h2>Live GeoTech Command Globe</h2>
+        <p>Interactive planetary awareness layer for weather, earthquakes, ISS, satellites, vessels, wind and space systems.</p>
+
+        <div className="globe-stage">
+          <div className="globe">
+            <div className="globe-grid"></div>
+            <div className="globe-core"></div>
+
+            <button className="globe-dot kutch">KUTCH WEATHER</button>
+            <button className="globe-dot quake">SEISMIC ALERTS</button>
+            <button className="globe-dot iss">ISS</button>
+            <button className="globe-dot sat">SATELLITES</button>
+            <button className="globe-dot vessel">INDIA VESSELS</button>
+
+            <div className="orbit orbit-one"></div>
+            <div className="orbit orbit-two"></div>
+            <div className="orbit orbit-three"></div>
+          </div>
+
+          <div className="globe-console">
+            <span>PLANETARY SYSTEMS ONLINE</span>
+            <h3>GeoTech Live Layer</h3>
+            <p>Weather, wind, seismic warnings, orbital objects, maritime movement and Earth-system signals visualized as a command globe.</p>
+          </div>
+        </div>
 
         <div className="geo-grid">
           <div className="geo-card">
