@@ -33,6 +33,17 @@ export default function App() {
 
         <p>
           YardFindX is a container intelligence platform developed by
+
+<a
+  href="https://yardfindx.com"
+  target="_blank"
+  rel="noreferrer"
+  style={{color:"#00eaff"}}
+>
+  Visit YardFindX →
+</a>
+
+
           Cyberdyne Technologies to transform empty container yard operations.
         </p>
 
