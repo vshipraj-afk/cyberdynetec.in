@@ -547,3 +547,52 @@ body{
 .conflict-item small{
   color:#6ea17d;
 }
+
+/* CYBERDYNE HERO */
+
+.eyebrow{
+  font-size:12px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:#8a938d;
+  margin-bottom:24px;
+}
+
+.hero h1{
+  font-size:76px;
+  line-height:.95;
+  letter-spacing:-4px;
+  margin:0 0 26px;
+  font-weight:700;
+  max-width:900px;
+}
+
+.hero-stack{
+  font-size:24px;
+  line-height:1.8;
+  color:#d7ddd8;
+  margin-bottom:30px;
+}
+
+.hero-sub{
+  font-size:18px;
+  max-width:760px;
+  color:#9ea8a2;
+  margin-bottom:32px;
+}
+
+@media(max-width:900px){
+
+  .hero h1{
+    font-size:44px;
+    letter-spacing:-2px;
+  }
+
+  .hero-stack{
+    font-size:18px;
+  }
+
+  .hero-sub{
+    font-size:16px;
+  }
+}

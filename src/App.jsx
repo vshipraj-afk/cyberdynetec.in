@@ -43,17 +43,35 @@ export default function App() {
         </div>
       </nav>
 
-      <section className="hero">
-        <h1>FROM ONE WORLD<br />TO WORLDS</h1>
-        <p>
-          Software.<br />
-          Intelligence.<br />
-          Autonomous Systems.<br /><br />
-          Building the technologies that will define the next century.
-        </p>
-        <a className="btn" href="#yardfindx">EXPLORE CYBERDYNE</a>
+      
+<section className="hero">
 
-        </section>
+  <div className="eyebrow">
+    CYBERDYNE TECHNOLOGIES
+  </div>
+
+  <h1>
+    FROM ONE WORLD
+    <br />
+    TO WORLDS
+  </h1>
+
+  <div className="hero-stack">
+    Software.<br />
+    Intelligence.<br />
+    Autonomous Systems.
+  </div>
+
+  <p className="hero-sub">
+    Building the technologies that will define the next century.
+  </p>
+
+  <a className="btn" href="#yardfindx">
+    Explore Cyberdyne
+  </a>
+
+</section>
+
 
       <section id="yardfindx" className="panel">
         <h2>Flagship Product: YardFindX</h2>
