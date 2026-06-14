@@ -475,3 +475,40 @@ body{
   }
 }
 
+
+
+/* MOVING WORLD */
+.orbit-globe{
+  overflow:hidden;
+}
+
+.orbit-globe::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  background:
+    linear-gradient(90deg, transparent 47%, rgba(255,255,255,.18) 48%, transparent 52%),
+    repeating-linear-gradient(90deg, transparent 0 38px, rgba(255,255,255,.08) 39px),
+    repeating-linear-gradient(0deg, transparent 0 38px, rgba(255,255,255,.06) 39px);
+  animation:worldMove 16s linear infinite;
+}
+
+.orbit-globe::after{
+  content:"";
+  position:absolute;
+  inset:18%;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.18);
+  animation:worldPulse 4s ease-in-out infinite;
+}
+
+@keyframes worldMove{
+  from{transform:translateX(-40px) rotate(0deg)}
+  to{transform:translateX(40px) rotate(360deg)}
+}
+
+@keyframes worldPulse{
+  0%,100%{opacity:.35;transform:scale(1)}
+  50%{opacity:.75;transform:scale(1.04)}
+}
