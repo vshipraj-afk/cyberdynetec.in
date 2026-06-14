@@ -31,7 +31,7 @@ export default function App() {
           <a href="#yardfindx">YardFindX</a>
           <a href="#systems">Systems</a>
           <a href="#orbit">Orbit</a>
-          <a href="#geotech">GeoTech</a>
+          
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -131,83 +131,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="geotech" className="panel globe-panel">
-        <h2>Live GeoTech Command Globe</h2>
-        <p>Interactive planetary awareness layer for weather, earthquakes, ISS, satellites, vessels, wind and space systems.</p>
-
-        <div className="globe-stage">
-          <div className="globe">
-            <div className="globe-grid"></div>
-            <div className="globe-core"></div>
-
-            <button className="globe-dot kutch">KUTCH WEATHER</button>
-            <button className="globe-dot quake">SEISMIC ALERTS</button>
-            <button className="globe-dot iss">ISS</button>
-            <button className="globe-dot sat">SATELLITES</button>
-            <button className="globe-dot vessel">INDIA VESSELS</button>
-
-            <div className="orbit orbit-one"></div>
-            <div className="orbit orbit-two"></div>
-            <div className="orbit orbit-three"></div>
-          </div>
-
-          <div className="globe-console">
-            <span>PLANETARY SYSTEMS ONLINE</span>
-            <h3>GeoTech Live Layer</h3>
-            <p>Weather, wind, seismic warnings, orbital objects, maritime movement and Earth-system signals visualized as a command globe.</p>
-          </div>
-        </div>
-
-        <div className="geo-grid">
-          <div className="geo-card">
-            <span>WEATHER / KUTCH</span>
-            <h3>{weather ? `${weather.current.temperature_2m}°C` : "Loading"}</h3>
-            <p>Wind: {weather ? `${weather.current.wind_speed_10m} km/h` : "--"}</p>
-            <p>Direction: {weather ? `${weather.current.wind_direction_10m}°` : "--"}</p>
-            <p>UV Index: {weather ? weather.daily.uv_index_max[0] : "--"}</p>
-          </div>
-
-          <div className="geo-card">
-            <span>EARTHQUAKE WATCH</span>
-            <h3>{quakes.length} Alerts</h3>
-            {quakes.map((q, i) => (
-              <p key={i}>M{q.properties.mag} — {q.properties.place}</p>
-            ))}
-          </div>
-
-          <div className="geo-card">
-            <span>ISS POSITION</span>
-            <h3>International Space Station</h3>
-            <p>Lat: {iss ? iss.latitude.toFixed(2) : "--"}</p>
-            <p>Lng: {iss ? iss.longitude.toFixed(2) : "--"}</p>
-            <p>Altitude: {iss ? `${iss.altitude.toFixed(0)} km` : "--"}</p>
-          </div>
-
-          <div className="geo-card">
-            <span>SPACE SYSTEM</span>
-            <h3>Earth • Moon • Sun</h3>
-            <p>Seasonal cycle, sunrise/sunset, lunar awareness, and solar radiation monitoring.</p>
-            <p>Sunrise: {weather ? weather.daily.sunrise[0].split("T")[1] : "--"}</p>
-            <p>Sunset: {weather ? weather.daily.sunset[0].split("T")[1] : "--"}</p>
-          </div>
-
-          <div className="geo-card">
-            <span>SATELLITE LAYER</span>
-            <h3>Orbital Systems</h3>
-            <p>ISS live tracking enabled.</p>
-            <p>Starlink and satellite constellation layer planned.</p>
-            <p>Requires satellite tracking API key for full live feed.</p>
-          </div>
-
-          <div className="geo-card">
-            <span>MARITIME LAYER</span>
-            <h3>India Flag Vessels</h3>
-            <p>Indian-flag vessel tracking planned.</p>
-            <p>Live AIS vessel feeds require a maritime API subscription.</p>
-            <p>Future use: ports, vessels, routes, cargo and fleet intelligence.</p>
-          </div>
-        </div>
-      </section>
+      
 
       <section id="contact" className="panel contact">
         <h2>Contact</h2>
