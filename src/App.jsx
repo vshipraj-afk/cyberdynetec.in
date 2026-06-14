@@ -7,6 +7,7 @@ export default function App() {
   const [iss, setIss] = useState(null);
   const [conflicts, setConflicts] = useState([]);
   const [conflictStatus, setConflictStatus] = useState("Loading autonomous GDELT feed...");
+  const [activeNews, setActiveNews] = useState(0);
 
   useEffect(() => {
     fetch("https://api.open-meteo.com/v1/forecast?latitude=23.2419&longitude=69.6669&current=temperature_2m,wind_speed_10m,wind_direction_10m,weather_code&daily=sunrise,sunset,uv_index_max&timezone=auto")
@@ -61,6 +62,14 @@ export default function App() {
         ])
       );
   }, []);
+
+  useEffect(() => {
+    if (!conflicts.length) return;
+    const newsTimer = setInterval(() => {
+      setActiveNews((current) => (current + 1) % conflicts.length);
+    }, 4500);
+    return () => clearInterval(newsTimer);
+  }, [conflicts]);
 
   return (
     <div className="site">
@@ -188,6 +197,27 @@ export default function App() {
             <li>Public government releases</li>
           </ul>
         </div>
+      </div>
+
+      <div className="news-collection-window">
+        <span>LIVE NEWS COLLECTION</span>
+
+        {conflicts.length > 0 ? (
+          <a
+            href={conflicts[activeNews]?.url}
+            target="_blank"
+            rel="noreferrer"
+            className="featured-news"
+          >
+            <small>
+              {(conflicts[activeNews]?.sourceCountry || "GLOBAL")} · {(conflicts[activeNews]?.seendate || "LIVE")}
+            </small>
+            <strong>{conflicts[activeNews]?.title}</strong>
+            <em>{conflicts[activeNews]?.domain}</em>
+          </a>
+        ) : (
+          <p>Collecting live conflict news...</p>
+        )}
       </div>
 
       <div className="conflict-feed">
