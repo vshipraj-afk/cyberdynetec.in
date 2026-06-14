@@ -104,6 +104,31 @@ export default function App() {
     return () => clearInterval(newsTimer);
   }, [conflicts]);
 
+  function askCyberdyne() {
+    const q = question.toLowerCase();
+
+    if (!q.trim()) {
+      setAnswer("Ask about weather, solar activity, conflicts, YardFindX, Project Nandi, or the Archive.");
+      return;
+    }
+
+    if (q.includes("weather") || q.includes("uv") || q.includes("wind") || q.includes("sun")) {
+      setAnswer("Open Atmosphere: it shows local weather, wind, UV exposure, sunrise, sunset, and solar activity.");
+    } else if (q.includes("solar") || q.includes("flare")) {
+      setAnswer("Solar activity monitors flares, geomagnetic disturbances, and radio-blackout risk from NOAA space-weather feeds.");
+    } else if (q.includes("conflict") || q.includes("war") || q.includes("strike")) {
+      setAnswer("Open Cyberdyne Orbit: it tracks conflict developments using verified public reporting and GDELT event intelligence.");
+    } else if (q.includes("yardfindx") || q.includes("container")) {
+      setAnswer("YardFindX is Cyberdyne Technologies' flagship container intelligence platform for empty container yard operations.");
+    } else if (q.includes("nandi")) {
+      setAnswer("Project Nandi is Cyberdyne's autonomous ground systems concept for inspection, mobility, and remote operations.");
+    } else if (q.includes("archive") || q.includes("nobel") || q.includes("leader")) {
+      setAnswer("Cyberdyne Archive Engine is designed to preserve public metadata, Nobel records, leaders, newspapers, and major human-impact events.");
+    } else {
+      setAnswer("Cyberdyne is building software, intelligence, autonomous systems, planetary awareness, and knowledge infrastructure.");
+    }
+  }
+
   return (
     <div className="site">
       <nav className="nav">
@@ -111,6 +136,7 @@ export default function App() {
         <div className="links">
           <a href="#yardfindx">YardFindX</a>
           <a href="#systems">Systems</a>
+          <a href="#assistant">Assistant</a>
           <a href="#atmosphere">Atmosphere</a>
           <a href="#orbit">Orbit</a>
           
@@ -150,6 +176,38 @@ export default function App() {
 </section>
 
 
+
+
+      <section id="assistant" className="panel assistant-panel">
+        <h2>Cyberdyne Assistant</h2>
+        <p>Ask what to look at today across atmosphere, orbit, archive, YardFindX and autonomous systems.</p>
+
+        <div className="assistant-box">
+          <input
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") askCyberdyne();
+            }}
+            placeholder="Ask Cyberdyne..."
+          />
+
+          <button onClick={askCyberdyne}>
+            Query
+          </button>
+        </div>
+
+        <div className="assistant-answer">
+          {answer}
+        </div>
+
+        <div className="assistant-prompts">
+          <button onClick={() => {setQuestion("What should I look at today?"); setAnswer("Start with Atmosphere for local conditions, then Orbit for global conflicts, then Archive for long-term knowledge.");}}>Today</button>
+          <button onClick={() => {setQuestion("Show solar activity"); setAnswer("Atmosphere shows solar flare class, geomagnetic activity, and radio-blackout monitoring.");}}>Solar</button>
+          <button onClick={() => {setQuestion("Show conflicts"); setAnswer("Cyberdyne Orbit displays conflict intelligence from verified reporting and GDELT monitoring.");}}>Conflicts</button>
+          <button onClick={() => {setQuestion("What is YardFindX?"); setAnswer("YardFindX is Cyberdyne's flagship container intelligence platform.");}}>YardFindX</button>
+        </div>
+      </section>
 
       <section id="atmosphere" className="panel atmosphere">
         <h2>Atmosphere</h2>
