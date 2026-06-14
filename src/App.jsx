@@ -41,8 +41,10 @@ export default function App() {
       <section className="hero">
         <h1>FROM ONE WORLD<br />TO WORLDS</h1>
         <p>
-          Building software, intelligence, and autonomous systems for the
-          physical and digital world.
+          Software.<br />
+          Intelligence.<br />
+          Autonomous Systems.<br /><br />
+          Building the technologies that will define the next century.
         </p>
         <a className="btn" href="#yardfindx">EXPLORE CYBERDYNE</a>
 
