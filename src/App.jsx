@@ -9,7 +9,8 @@ export default function App() {
   const [conflictStatus, setConflictStatus] = useState("Loading autonomous GDELT feed...");
   const [activeNews, setActiveNews] = useState(0);
   const [localWeather, setLocalWeather] = useState(null);
-  const [spaceWeather, setSpaceWeather] = useState(null);
+  const [spaceWeather, setSpaceWeather] = useState([]);
+  const [solarStatus, setSolarStatus] = useState("Checking NOAA SWPC...");
 
   useEffect(() => {
     fetch("https://api.open-meteo.com/v1/forecast?latitude=23.2419&longitude=69.6669&current=temperature_2m,wind_speed_10m,wind_direction_10m,weather_code&daily=sunrise,sunset,uv_index_max&timezone=auto")
@@ -82,10 +83,17 @@ export default function App() {
       () => setLocalWeather(null)
     );
 
-    fetch("https://services.swpc.noaa.gov/json/alerts.json")
+    fetch("https://services.swpc.noaa.gov/products/alerts.json")
       .then((r) => r.json())
-      .then((d) => setSpaceWeather((d || []).slice(0, 3)))
-      .catch(() => setSpaceWeather(null));
+      .then((d) => {
+        const rows = Array.isArray(d) ? d.slice(1, 4) : [];
+        setSpaceWeather(rows);
+        setSolarStatus(rows.length ? "NOAA SWPC alerts active" : "No active solar alerts");
+      })
+      .catch(() => {
+        setSpaceWeather([]);
+        setSolarStatus("NOAA SWPC feed unavailable");
+      });
   }, []);
 
   useEffect(() => {
@@ -186,13 +194,15 @@ export default function App() {
 
           <div className="solar-window">
             <span>SOLAR ACTIVITY</span>
-            <h3>{spaceWeather && spaceWeather.length ? "Space Weather Alerts" : "Quiet / Loading"}</h3>
-            {spaceWeather && spaceWeather.length ? (
+            <h3>{solarStatus}</h3>
+            {spaceWeather.length ? (
               spaceWeather.map((item, index) => (
-                <p key={index}>{item.message || item.product_id || "NOAA SWPC alert"}</p>
+                <p key={index}>
+                  {Array.isArray(item) ? item.join(" · ") : "NOAA SWPC alert"}
+                </p>
               ))
             ) : (
-              <p>Solar flare and space-weather alert feed from NOAA SWPC.</p>
+              <p>Solar flare, geomagnetic storm, and radio blackout monitoring via NOAA SWPC.</p>
             )}
           </div>
         </div>
