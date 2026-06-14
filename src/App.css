@@ -1127,3 +1127,17 @@ body{
     grid-template-columns:1fr;
   }
 }
+
+/* EMERGENCY VISIBILITY FIX */
+.site, body{
+  background:#0d1110 !important;
+  color:#f4f4f4 !important;
+}
+
+section, .panel, .card{
+  color:#f4f4f4 !important;
+}
+
+h1,h2,h3,p,span,strong,a,div{
+  visibility:visible !important;
+}
