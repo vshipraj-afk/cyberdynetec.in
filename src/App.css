@@ -928,3 +928,81 @@ body{
   letter-spacing:0;
   margin:0;
 }
+
+.solar-scale-card{
+  margin-top:18px;
+  padding:20px;
+  border-radius:16px;
+  background:#090c0b;
+  border:1px solid #2a312d;
+}
+
+.solar-scale-card > span{
+  display:block;
+  color:#7d8a82;
+  font-size:11px;
+  letter-spacing:1.5px;
+  margin-bottom:10px;
+}
+
+.solar-scale-card strong{
+  display:block;
+  font-size:32px;
+  color:#fff;
+  margin-bottom:6px;
+}
+
+.solar-scale-card p{
+  color:#b9c1bc;
+  margin-bottom:16px;
+}
+
+.flare-scale{
+  position:relative;
+  height:10px;
+  border-radius:999px;
+  background:linear-gradient(
+    90deg,
+    #6ea17d,
+    #d6c46a,
+    #d78945,
+    #c94a4a
+  );
+  margin-top:24px;
+}
+
+.flare-scale span{
+  position:absolute;
+  top:-24px;
+  font-size:11px;
+  color:#b9c1bc;
+}
+
+.flare-scale span:nth-child(1){left:0}
+.flare-scale span:nth-child(2){left:48%}
+.flare-scale span:nth-child(3){right:0}
+
+.flare-marker{
+  position:absolute;
+  left:52%;
+  top:-5px;
+  width:4px;
+  height:20px;
+  border-radius:999px;
+  background:#fff;
+  box-shadow:0 0 10px rgba(255,255,255,.5);
+}
+
+.solar-status{
+  margin-top:14px;
+  color:#6ea17d;
+  font-size:13px;
+  letter-spacing:1px;
+}
+
+.solar-explain{
+  margin-top:14px;
+  color:#b9c1bc;
+  font-size:13px;
+  line-height:1.6;
+}

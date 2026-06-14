@@ -224,6 +224,37 @@ export default function App() {
           </div>
 
           <div className="solar-window">
+
+<div className="solar-scale-card">
+
+  <span>SOLAR ACTIVITY</span>
+
+  <strong>M-Class</strong>
+
+  <p>Current Solar Activity Level</p>
+
+  <div className="flare-scale">
+
+    <span>C</span>
+    <span>M</span>
+    <span>X</span>
+
+    <div className="flare-marker"></div>
+
+  </div>
+
+  <div className="solar-status">
+    Moderate Activity
+  </div>
+
+  <div className="solar-explain">
+    Solar flares are bursts of energy released from the Sun.
+    Strong events can affect satellites, GPS navigation,
+    radio communications, and space operations.
+  </div>
+
+</div>
+
             <span>SOLAR ACTIVITY</span>
             <h3>Monitoring the Sun and Near-Earth Space</h3>
 
