@@ -896,3 +896,35 @@ body{
     grid-template-columns:1fr;
   }
 }
+
+.uv-scale{
+  position:relative;
+  height:8px;
+  margin-top:14px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#6ea17d,#d6c46a,#d78945,#c94a4a,#8f3fa6);
+  overflow:visible;
+}
+
+.uv-marker{
+  position:absolute;
+  top:-5px;
+  width:4px;
+  height:18px;
+  border-radius:999px;
+  background:#fff;
+  box-shadow:0 0 10px rgba(255,255,255,.45);
+}
+
+.uv-labels{
+  display:flex;
+  justify-content:space-between;
+  margin-top:8px;
+}
+
+.uv-labels span{
+  font-size:10px;
+  color:#7d8a82;
+  letter-spacing:0;
+  margin:0;
+}

@@ -173,10 +173,41 @@ export default function App() {
               <p>Direction</p>
             </div>
 
-            <div>
+            <div className="uv-box">
               <span>UV INDEX</span>
               <strong>{localWeather ? localWeather.daily.uv_index_max[0] : "--"}</strong>
-              <p>Daily max</p>
+              <p>
+                {localWeather
+                  ? localWeather.daily.uv_index_max[0] < 3
+                    ? "Low"
+                    : localWeather.daily.uv_index_max[0] < 6
+                    ? "Moderate"
+                    : localWeather.daily.uv_index_max[0] < 8
+                    ? "High"
+                    : localWeather.daily.uv_index_max[0] < 11
+                    ? "Very High"
+                    : "Extreme"
+                  : "Daily max"}
+              </p>
+
+              <div className="uv-scale">
+                <div
+                  className="uv-marker"
+                  style={{
+                    left: localWeather
+                      ? `${Math.min((localWeather.daily.uv_index_max[0] / 11) * 100, 100)}%`
+                      : "0%",
+                  }}
+                ></div>
+              </div>
+
+              <div className="uv-labels">
+                <span>0</span>
+                <span>3</span>
+                <span>6</span>
+                <span>8</span>
+                <span>11+</span>
+              </div>
             </div>
 
             <div>
