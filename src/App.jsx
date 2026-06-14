@@ -32,6 +32,7 @@ export default function App() {
           <a href="#systems">Systems</a>
           <a href="#orbit">Orbit</a>
           
+          <a href="#archive">Archive</a>
           <a href="#careers">Careers</a>
           <a href="#contact">Contact</a>
         </div>
@@ -134,6 +135,65 @@ export default function App() {
 
       
 
+
+
+      <section id="archive" className="panel archive">
+        <h2>Cyberdyne Human Impact Archive</h2>
+        <p>
+          A curated knowledge archive for Nobel Prize winners, world leaders,
+          scientists, builders, innovators, and institutions shaping humanity.
+        </p>
+
+        <div className="archive-grid">
+          <div className="archive-card">
+            <span>KNOWLEDGE</span>
+            <h3>Nobel Prize Archive</h3>
+            <p>
+              Official Nobel Prize records, laureate profiles, discovery areas,
+              countries, years, and human impact summaries.
+            </p>
+            <a href="https://www.nobelprize.org/prizes/lists/all-nobel-prizes/" target="_blank" rel="noreferrer">
+              Open Nobel Archive →
+            </a>
+          </div>
+
+          <div className="archive-card">
+            <span>LEADERSHIP</span>
+            <h3>Global Leaders</h3>
+            <p>
+              Profiles of political, scientific, industrial, military, social,
+              and technological leaders influencing the direction of the world.
+            </p>
+            <a href="https://www.un.org/en/about-us/member-states" target="_blank" rel="noreferrer">
+              Open UN Member States →
+            </a>
+          </div>
+
+          <div className="archive-card">
+            <span>NEWS MEMORY</span>
+            <h3>World Newspaper Front Pages</h3>
+            <p>
+              A reference window for front pages and headlines from India, China,
+              the UK, Europe, the USA, Canada, and South America.
+            </p>
+            <a href="https://www.freedomforum.org/todaysfrontpages/" target="_blank" rel="noreferrer">
+              Open Front Pages →
+            </a>
+          </div>
+        </div>
+
+        <div className="archive-list">
+          <h3>Regions Covered</h3>
+          <p>India • China • United Kingdom • Europe • United States • Canada • South America</p>
+
+          <h3>Archive Principle</h3>
+          <p>
+            Cyberdyne will preserve source links, dates, summaries, public metadata,
+            and research notes. Copyrighted newspaper images should be linked to
+            their original publishers or licensed sources.
+          </p>
+        </div>
+      </section>
 
       <section id="careers" className="panel careers">
         <h2>Careers</h2>
