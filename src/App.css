@@ -731,3 +731,49 @@ body{
 .featured-news:hover strong{
   text-decoration:underline;
 }
+
+.archive-engine{
+  margin-top:28px;
+  padding:28px;
+  border-radius:18px;
+  background:#0b0f0d;
+  border:1px solid #2a312d;
+}
+
+.archive-pipeline{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:20px;
+}
+
+.archive-pipeline div{
+  padding:18px;
+  border-radius:14px;
+  background:#151917;
+  border:1px solid #2a312d;
+}
+
+.archive-pipeline span{
+  display:block;
+  color:#6ea17d;
+  font-size:12px;
+  margin-bottom:10px;
+}
+
+.archive-pipeline strong{
+  display:block;
+  color:white;
+  margin-bottom:8px;
+}
+
+.archive-pipeline p{
+  font-size:13px;
+  color:#b9c1bc;
+}
+
+@media(max-width:900px){
+  .archive-pipeline{
+    grid-template-columns:1fr;
+  }
+}

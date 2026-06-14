@@ -313,10 +313,11 @@ export default function App() {
 
 
       <section id="archive" className="panel archive">
-        <h2>Cyberdyne Human Impact Archive</h2>
+        <h2>Cyberdyne Archive Engine</h2>
         <p>
-          A curated knowledge archive for Nobel Prize winners, world leaders,
-          scientists, builders, innovators, and institutions shaping humanity.
+          A long-term knowledge system for Nobel Prize winners, world leaders,
+          scientists, innovators, historical front pages, public records,
+          and major events shaping humanity.
         </p>
 
         <div className="archive-grid">
@@ -354,6 +355,22 @@ export default function App() {
             <a href="https://www.freedomforum.org/todaysfrontpages/" target="_blank" rel="noreferrer">
               Open Front Pages →
             </a>
+          </div>
+        </div>
+
+        <div className="archive-engine">
+          <h3>Archive Engine</h3>
+          <p>
+            Cyberdyne Archive Engine is designed to collect source links,
+            public metadata, dates, summaries, documents, and event references
+            into a searchable long-term knowledge base.
+          </p>
+
+          <div className="archive-pipeline">
+            <div><span>01</span><strong>Collect</strong><p>Official sources, public datasets, media references and open archives.</p></div>
+            <div><span>02</span><strong>Classify</strong><p>People, countries, institutions, topics, dates and historical relevance.</p></div>
+            <div><span>03</span><strong>Preserve</strong><p>Store metadata, links, summaries and research notes for future retrieval.</p></div>
+            <div><span>04</span><strong>Understand</strong><p>Connect events, leaders, inventions, conflicts and human progress.</p></div>
           </div>
         </div>
 
