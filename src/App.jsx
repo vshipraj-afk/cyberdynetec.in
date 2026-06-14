@@ -5,6 +5,7 @@ export default function App() {
   const [weather, setWeather] = useState(null);
   const [quakes, setQuakes] = useState([]);
   const [iss, setIss] = useState(null);
+  const [conflicts, setConflicts] = useState([]);
 
   useEffect(() => {
     fetch("https://api.open-meteo.com/v1/forecast?latitude=23.2419&longitude=69.6669&current=temperature_2m,wind_speed_10m,wind_direction_10m,weather_code&daily=sunrise,sunset,uv_index_max&timezone=auto")
@@ -21,6 +22,10 @@ export default function App() {
       .then(r => r.json())
       .then(setIss)
       .catch(() => setIss(null));
+    fetch("https://api.gdeltproject.org/api/v2/doc/doc?query=(war%20OR%20conflict%20OR%20strike%20OR%20missile%20OR%20border%20OR%20ceasefire)%20sourceCountry:IN%20OR%20sourceCountry:US%20OR%20sourceCountry:GB&mode=artlist&format=json&maxrecords=8&sort=hybridrel")
+      .then(r => r.json())
+      .then(d => setConflicts(d.articles || []))
+      .catch(() => setConflicts([]));
   }, []);
 
   return (
@@ -136,6 +141,26 @@ export default function App() {
           <div>
             <span>NEXT MODULE</span>
             <p>Live GDELT conflict feed with headlines, countries, timestamps and source links.</p>
+
+            <div className="conflict-feed">
+              {conflicts.length === 0 ? (
+                <p>Loading live conflict feed...</p>
+              ) : (
+                conflicts.map((item, index) => (
+                  <a
+                    key={index}
+                    href={item.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="conflict-item"
+                  >
+                    <span>{item.sourceCountry || "GLOBAL"} · {item.seendate || "LIVE"}</span>
+                    <strong>{item.title}</strong>
+                    <small>{item.domain}</small>
+                  </a>
+                ))
+              )}
+            </div>
           </div>
         </div>
       </section>

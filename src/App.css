@@ -512,3 +512,38 @@ body{
   0%,100%{opacity:.35;transform:scale(1)}
   50%{opacity:.75;transform:scale(1.04)}
 }
+
+.conflict-feed{
+  margin-top:18px;
+  display:grid;
+  gap:10px;
+}
+
+.conflict-item{
+  display:block;
+  padding:14px;
+  border-radius:12px;
+  background:#0d1110;
+  border:1px solid #2a312d;
+  color:#fff;
+  text-decoration:none;
+}
+
+.conflict-item span{
+  display:block;
+  font-size:10px;
+  letter-spacing:1px;
+  color:#7d8a82;
+  margin-bottom:7px;
+}
+
+.conflict-item strong{
+  display:block;
+  font-size:14px;
+  line-height:1.35;
+  margin-bottom:6px;
+}
+
+.conflict-item small{
+  color:#6ea17d;
+}
