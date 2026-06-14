@@ -39,7 +39,7 @@ export default function App() {
       </nav>
 
       <section className="hero">
-        <h1>FROM CONTAINER YARDS<br />TO AUTONOMOUS SYSTEMS</h1>
+        <h1>FROM ONE WORLD<br />TO WORLDS</h1>
         <p>
           Building software, intelligence, and autonomous systems for the
           physical and digital world.
