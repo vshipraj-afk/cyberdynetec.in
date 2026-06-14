@@ -46,16 +46,7 @@ export default function App() {
         </p>
         <a className="btn" href="#yardfindx">EXPLORE CYBERDYNE</a>
 
-        <div className="robot-cheetah" aria-label="Robotic cheetah concept">
-          <div className="cheetah-body"></div>
-          <div className="cheetah-head"></div>
-          <div className="cheetah-tail"></div>
-          <div className="leg leg1"></div>
-          <div className="leg leg2"></div>
-          <div className="leg leg3"></div>
-          <div className="leg leg4"></div>
-        </div>
-      </section>
+        </section>
 
       <section id="yardfindx" className="panel">
         <h2>Flagship Product: YardFindX</h2>
