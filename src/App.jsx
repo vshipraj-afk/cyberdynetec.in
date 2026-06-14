@@ -173,55 +173,28 @@ export default function App() {
               <p>Direction</p>
             </div>
 
-            <div className="uv-box">
-              <span>UV INDEX</span>
-              <strong>{localWeather ? (localWeather?.daily?.uv_index_max?.[0] ?? 0) : "--"}</strong>
-              <p>
-                {localWeather
-                  ? (localWeather?.daily?.uv_index_max?.[0] ?? 0) < 3
-                    ? "Low"
-                    : (localWeather?.daily?.uv_index_max?.[0] ?? 0) < 6
-                    ? "Moderate"
-                    : (localWeather?.daily?.uv_index_max?.[0] ?? 0) < 8
-                    ? "High"
-                    : (localWeather?.daily?.uv_index_max?.[0] ?? 0) < 11
-                    ? "Very High"
-                    : "Extreme"
-                  : "Daily max"}
-              </p>
+            
+<div className="uv-box">
+  <span>UV INDEX</span>
 
-              <div className="uv-scale">
-                <div
-                  className="uv-marker"
-                  style={{
-                    left: localWeather
-                      ? `${Math.min(((localWeather?.daily?.uv_index_max?.[0] ?? 0) / 11) * 100, 100)}%`
-                      : "0%",
-                  }}
-                ></div>
-              </div>
+  <strong className="metric-big">
+    {localWeather ? (localWeather?.daily?.uv_index_max?.[0] ?? 0).toFixed(1) : "--"}
+  </strong>
 
-              <div className="uv-labels">
-                <span>0</span>
-                <span>3</span>
-                <span>6</span>
-                <span>8</span>
-                <span>11+</span>
-              </div>
-            </div>
+  <div className="uv-state">
+    {
+      !localWeather ? "UNKNOWN" :
+      (localWeather?.daily?.uv_index_max?.[0] ?? 0) < 3 ? "LOW EXPOSURE" :
+      (localWeather?.daily?.uv_index_max?.[0] ?? 0) < 6 ? "MODERATE EXPOSURE" :
+      (localWeather?.daily?.uv_index_max?.[0] ?? 0) < 8 ? "HIGH EXPOSURE" :
+      (localWeather?.daily?.uv_index_max?.[0] ?? 0) < 11 ? "VERY HIGH EXPOSURE" :
+      "EXTREME EXPOSURE"
+    }
+  </div>
 
-            <div>
-              <span>SUNRISE</span>
-              <strong>{localWeather ? localWeather.daily.sunrise[0].split("T")[1] : "--"}</strong>
-              <p>Local time</p>
-            </div>
+  <p>Protection Recommended</p>
+</div>
 
-            <div>
-              <span>SUNSET</span>
-              <strong>{localWeather ? localWeather.daily.sunset[0].split("T")[1] : "--"}</strong>
-              <p>Local time</p>
-            </div>
-          </div>
 
           <div className="solar-window">
 

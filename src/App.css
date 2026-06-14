@@ -1044,3 +1044,26 @@ body{
   font-size:10px;
   color:#7d8a82;
 }
+
+.metric-big{
+  display:block;
+  font-size:42px;
+  font-weight:700;
+  line-height:1;
+  color:#fff;
+  margin:8px 0;
+}
+
+.uv-state{
+  margin-top:10px;
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#6ea17d;
+}
+
+.uv-scale,
+.uv-marker,
+.uv-labels{
+  display:none !important;
+}
