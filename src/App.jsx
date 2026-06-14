@@ -194,16 +194,41 @@ export default function App() {
 
           <div className="solar-window">
             <span>SOLAR ACTIVITY</span>
-            <h3>{solarStatus}</h3>
-            {spaceWeather.length ? (
-              spaceWeather.map((item, index) => (
-                <p key={index}>
-                  {Array.isArray(item) ? item.join(" · ") : "NOAA SWPC alert"}
-                </p>
-              ))
-            ) : (
-              <p>Solar flare, geomagnetic storm, and radio blackout monitoring via NOAA SWPC.</p>
-            )}
+            <h3>Monitoring the Sun and Near-Earth Space</h3>
+
+            <p>
+              The Sun emits radiation, charged particles, and magnetic energy that can affect
+              satellites, GPS navigation, radio communication, power grids, and spacecraft.
+            </p>
+
+            <p>
+              Cyberdyne monitors public space-weather bulletins from NOAA's Space Weather
+              Prediction Center.
+            </p>
+
+            <div className="solar-status-line">
+              {solarStatus}
+            </div>
+
+            <div className="solar-alert-grid">
+              <div className="solar-alert-card">
+                <span>SOLAR FLARES</span>
+                <strong>Monitored</strong>
+                <p>Powerful bursts of radiation from the Sun that may affect radio and satellite systems.</p>
+              </div>
+
+              <div className="solar-alert-card">
+                <span>GEOMAGNETIC FIELD</span>
+                <strong>Monitored</strong>
+                <p>Disturbances in Earth's magnetic field that can affect satellites and power systems.</p>
+              </div>
+
+              <div className="solar-alert-card">
+                <span>RADIO BLACKOUTS</span>
+                <strong>Monitored</strong>
+                <p>Temporary disruptions to radio communication caused by solar radiation events.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

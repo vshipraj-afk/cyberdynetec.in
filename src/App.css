@@ -845,3 +845,54 @@ body{
     grid-template-columns:1fr;
   }
 }
+
+.solar-status-line{
+  display:inline-block;
+  margin:14px 0 10px;
+  padding:9px 12px;
+  border-radius:999px;
+  background:#151917;
+  border:1px solid #2a312d;
+  color:#6ea17d;
+  font-size:13px;
+}
+
+.solar-alert-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:16px;
+}
+
+.solar-alert-card{
+  padding:18px;
+  border-radius:14px;
+  background:#090c0b;
+  border:1px solid #2a312d;
+}
+
+.solar-alert-card span{
+  display:block;
+  font-size:11px;
+  letter-spacing:1.5px;
+  color:#7d8a82;
+  margin-bottom:8px;
+}
+
+.solar-alert-card strong{
+  display:block;
+  font-size:18px;
+  color:#fff;
+  margin-bottom:8px;
+}
+
+.solar-alert-card p{
+  color:#b9c1bc;
+  font-size:13px;
+}
+
+@media(max-width:900px){
+  .solar-alert-grid{
+    grid-template-columns:1fr;
+  }
+}
