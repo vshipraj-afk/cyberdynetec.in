@@ -1,0 +1,205 @@
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  background:#02040a;
+  color:#eaf8ff;
+}
+
+.site{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(0,255,255,.22), transparent 30%),
+    radial-gradient(circle at 80% 20%, rgba(120,0,255,.28), transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(0,120,255,.22), transparent 35%),
+    #02040a;
+  overflow:hidden;
+}
+
+.site::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size:42px 42px;
+  mask-image:linear-gradient(to bottom, black, transparent 85%);
+  pointer-events:none;
+}
+
+.nav{
+  height:82px;
+  padding:0 54px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid rgba(120,220,255,.22);
+  backdrop-filter:blur(18px);
+  background:rgba(2,4,10,.45);
+}
+
+.logo{
+  font-weight:900;
+  letter-spacing:6px;
+  font-size:22px;
+  color:#9ff6ff;
+  text-shadow:0 0 24px #00eaff;
+}
+
+.links a{
+  color:#c9f7ff;
+  text-decoration:none;
+  margin-left:30px;
+  font-size:13px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.hero{
+  position:relative;
+  padding:140px 54px 115px;
+  max-width:1050px;
+}
+
+.hero::after{
+  content:"SYSTEM ONLINE";
+  position:absolute;
+  right:-240px;
+  top:120px;
+  width:520px;
+  height:520px;
+  border:1px solid rgba(0,234,255,.4);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(159,246,255,.35);
+  letter-spacing:6px;
+  font-size:13px;
+  box-shadow:
+    0 0 80px rgba(0,234,255,.18),
+    inset 0 0 70px rgba(0,234,255,.12);
+  animation:pulse 3s infinite ease-in-out;
+}
+
+.hero h1{
+  font-size:94px;
+  line-height:.88;
+  margin:0 0 34px;
+  letter-spacing:-5px;
+  text-transform:uppercase;
+  background:linear-gradient(90deg,#fff,#9ff6ff,#7f7cff);
+  -webkit-background-clip:text;
+  color:transparent;
+  text-shadow:0 0 55px rgba(0,234,255,.22);
+}
+
+.hero p{
+  font-size:22px;
+  color:#b9eaff;
+  max-width:700px;
+  line-height:1.6;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:32px;
+  padding:17px 28px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#00eaff,#6b6cff);
+  color:#02040a;
+  text-decoration:none;
+  font-weight:900;
+  letter-spacing:2px;
+  box-shadow:0 0 38px rgba(0,234,255,.45);
+}
+
+.panel{
+  margin:42px 54px;
+  padding:48px;
+  border-radius:30px;
+  background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.035));
+  border:1px solid rgba(120,220,255,.22);
+  box-shadow:0 0 70px rgba(0,234,255,.08);
+  backdrop-filter:blur(20px);
+}
+
+.panel h2{
+  font-size:42px;
+  margin-top:0;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  color:#9ff6ff;
+}
+
+.panel p{
+  color:#c9eaff;
+  font-size:19px;
+  line-height:1.7;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  padding:42px 54px;
+}
+
+.card{
+  position:relative;
+  padding:36px;
+  min-height:250px;
+  border-radius:28px;
+  background:
+    linear-gradient(135deg,rgba(0,234,255,.16),rgba(120,0,255,.10)),
+    rgba(255,255,255,.04);
+  border:1px solid rgba(120,220,255,.28);
+  box-shadow:0 0 50px rgba(0,234,255,.09);
+  overflow:hidden;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  background:linear-gradient(90deg,transparent,#00eaff,transparent);
+  height:1px;
+  animation:scan 2.8s infinite linear;
+}
+
+.card h3{
+  font-size:27px;
+  margin-top:0;
+  color:#ffffff;
+}
+
+.card p{
+  color:#b9eaff;
+  line-height:1.65;
+}
+
+.contact{
+  margin-bottom:80px;
+}
+
+@keyframes pulse{
+  0%,100%{transform:scale(1);opacity:.75}
+  50%{transform:scale(1.04);opacity:1}
+}
+
+@keyframes scan{
+  from{transform:translateX(-100%)}
+  to{transform:translateX(100%)}
+}
+
+@media(max-width:800px){
+  .nav{padding:0 24px}
+  .links{display:none}
+  .hero{padding:90px 24px}
+  .hero h1{font-size:52px}
+  .hero::after{display:none}
+  .cards{grid-template-columns:1fr;padding:24px}
+  .panel{margin:24px;padding:28px}
+}
