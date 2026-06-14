@@ -79,56 +79,60 @@ export default function App() {
       <section id="orbit" className="panel orbit-panel">
         <h2>Cyberdyne Orbit</h2>
         <p>
-          A global command-globe concept layer for conflicts, weather, earthquakes,
-          satellites, maritime movement, space systems, and live geopolitical awareness.
+          Latest geopolitical conflict monitor with verified news links and
+          short video-report access from trusted publishers.
         </p>
 
-        <div className="orbit-command">
-          <div className="orbit-globe">
-            <div className="orbit-scan"></div>
-            <div className="orbit-dot india">INDIA</div>
-            <div className="orbit-dot hormuz">HORMUZ</div>
-            <div className="orbit-dot europe">EUROPE</div>
-            <div className="orbit-dot pacific">PACIFIC</div>
-            <div className="orbit-ring r1"></div>
-            <div className="orbit-ring r2"></div>
-            <div className="orbit-ring r3"></div>
-          </div>
-
-          <div className="orbit-console">
-            <span>GLOBAL COMMAND LAYERS</span>
-            <h3>Conflict Globe Meets GeoTech</h3>
+        <div className="orbit-command minimal-conflict">
+          <div className="orbit-console full">
+            <span>LIVE CONFLICT LAYER</span>
+            <h3>Current Conflict Intelligence</h3>
             <p>
-              Cyberdyne Orbit connects the earlier Conflict Globe vision with live
-              environmental, orbital, maritime, and geopolitical intelligence.
+              Cyberdyne Orbit tracks active conflict zones through public news
+              sources and verified reporting. Video links open publisher pages
+              where available.
             </p>
 
-            <div className="layer-grid">
-              <button>Weather</button>
-              <button>Earthquakes</button>
-              <button>Conflicts</button>
-              <button>Satellites</button>
-              <button>ISS</button>
-              <button>Maritime</button>
-              <button>India</button>
-              <button>Rest of World</button>
-              <button>News</button>
+            <div className="conflict-video-grid">
+              <a className="video-card" href="https://www.reuters.com/world/ukraine-russia-war/" target="_blank" rel="noreferrer">
+                <span>LIVE REPORTING</span>
+                <strong>Ukraine–Russia War</strong>
+                <p>Reuters live conflict coverage and video reports.</p>
+              </a>
+
+              <a className="video-card" href="https://www.reuters.com/video/" target="_blank" rel="noreferrer">
+                <span>VIDEO SOURCE</span>
+                <strong>Reuters Video</strong>
+                <p>Verified short global news video reports.</p>
+              </a>
+
+              <a className="video-card" href="https://apnews.com/hub/world-news" target="_blank" rel="noreferrer">
+                <span>GLOBAL SOURCE</span>
+                <strong>AP World News</strong>
+                <p>Latest verified conflict and world event coverage.</p>
+              </a>
+
+              <a className="video-card" href="https://www.gdeltproject.org/" target="_blank" rel="noreferrer">
+                <span>DATA SOURCE</span>
+                <strong>GDELT Global Graph</strong>
+                <p>Near-real-time global news monitoring layer.</p>
+              </a>
             </div>
           </div>
         </div>
 
         <div className="orbit-feeds">
           <div>
-            <span>INDIA LAYER</span>
-            <p>ISRO, IMD, ports, shipping, weather, logistics, roads, rail, and disaster alerts.</p>
+            <span>ACTIVE HOTSPOTS</span>
+            <p>Ukraine, Middle East, Red Sea, South China Sea, border conflicts and strategic chokepoints.</p>
           </div>
           <div>
-            <span>WORLD LAYER</span>
-            <p>NASA, NOAA, USGS, ESA, ISS, global weather, seismic activity, and conflicts.</p>
+            <span>VIDEO POLICY</span>
+            <p>Only verified publisher links. No autoplay of graphic strike footage. No unverified clips.</p>
           </div>
           <div>
-            <span>CONFLICT LAYER</span>
-            <p>Hotspots, live event tiles, geopolitical updates, routes, ports, and strategic chokepoints.</p>
+            <span>NEXT MODULE</span>
+            <p>Live GDELT conflict feed with headlines, countries, timestamps and source links.</p>
           </div>
         </div>
       </section>

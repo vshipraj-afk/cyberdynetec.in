@@ -418,3 +418,59 @@ body{
   letter-spacing:4px;
   z-index:2;
 }
+
+.minimal-conflict{
+  grid-template-columns:1fr;
+}
+
+.orbit-console.full{
+  width:100%;
+}
+
+.conflict-video-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:24px;
+}
+
+.video-card{
+  display:block;
+  padding:20px;
+  border-radius:16px;
+  background:#0b0b0b;
+  border:1px solid #2a312d;
+  color:#f2f2f2;
+  text-decoration:none;
+}
+
+.video-card span{
+  display:block;
+  font-size:10px;
+  letter-spacing:1.5px;
+  color:#7d8a82;
+  margin-bottom:10px;
+}
+
+.video-card strong{
+  display:block;
+  font-size:16px;
+  margin-bottom:10px;
+}
+
+.video-card p{
+  font-size:13px;
+  color:#b9c1bc;
+}
+
+.video-card:hover{
+  border-color:#6ea17d;
+  transform:translateY(-3px);
+  transition:.25s ease;
+}
+
+@media(max-width:900px){
+  .conflict-video-grid{
+    grid-template-columns:1fr;
+  }
+}
