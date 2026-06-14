@@ -22,10 +22,30 @@ export default function App() {
       </section>
 
       <section id="mission" className="panel">
-        <h2>Mission</h2>
+        <h2>Cyberdyne Technologies</h2>
+
         <p>
-          To create reliable, rugged, intelligent machines that assist humans
-          in security, logistics, disaster response, and field operations.
+          Building software, intelligence and autonomous systems for the
+          physical and digital world.
+        </p>
+
+        <h3>Flagship Product: YardFindX</h3>
+
+        <p>
+          YardFindX is a container intelligence platform developed by
+          Cyberdyne Technologies to transform empty container yard operations.
+        </p>
+
+        <p>
+          Born in the container yards of Mundra.
+          Built by operators.
+          Designed for real-world operations.
+        </p>
+
+        <p>
+          Features include container tracking, GPS capture,
+          yard mapping, fleet monitoring, operator workflows,
+          analytics dashboards and command centre operations.
         </p>
       </section>
 
