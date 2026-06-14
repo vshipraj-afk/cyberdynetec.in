@@ -777,3 +777,71 @@ body{
     grid-template-columns:1fr;
   }
 }
+
+.atmosphere{
+  background:#0f1412;
+}
+
+.weather-window{
+  display:grid;
+  grid-template-columns:1.1fr 1.4fr;
+  gap:18px;
+  margin-top:26px;
+}
+
+.weather-main,
+.solar-window,
+.weather-metrics div{
+  padding:24px;
+  border-radius:18px;
+  background:#090c0b;
+  border:1px solid #2a312d;
+}
+
+.weather-main span,
+.weather-metrics span,
+.solar-window span{
+  display:block;
+  color:#7d8a82;
+  font-size:11px;
+  letter-spacing:1.5px;
+  margin-bottom:12px;
+}
+
+.weather-main h3{
+  font-size:54px;
+  margin:0 0 10px;
+}
+
+.weather-metrics{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.weather-metrics strong{
+  display:block;
+  color:#fff;
+  font-size:24px;
+}
+
+.weather-metrics p,
+.solar-window p{
+  font-size:13px;
+  color:#b9c1bc;
+}
+
+.solar-window{
+  grid-column:1 / -1;
+}
+
+.solar-window h3{
+  margin-top:0;
+}
+
+@media(max-width:900px){
+  .weather-window,
+  .weather-metrics{
+    grid-template-columns:1fr;
+  }
+}

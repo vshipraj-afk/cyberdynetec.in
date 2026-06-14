@@ -8,6 +8,8 @@ export default function App() {
   const [conflicts, setConflicts] = useState([]);
   const [conflictStatus, setConflictStatus] = useState("Loading autonomous GDELT feed...");
   const [activeNews, setActiveNews] = useState(0);
+  const [localWeather, setLocalWeather] = useState(null);
+  const [spaceWeather, setSpaceWeather] = useState(null);
 
   useEffect(() => {
     fetch("https://api.open-meteo.com/v1/forecast?latitude=23.2419&longitude=69.6669&current=temperature_2m,wind_speed_10m,wind_direction_10m,weather_code&daily=sunrise,sunset,uv_index_max&timezone=auto")
@@ -64,6 +66,29 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    if (!navigator.geolocation) return;
+
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const { latitude, longitude } = pos.coords;
+
+        fetch(
+          `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,wind_direction_10m,weather_code&daily=uv_index_max,sunrise,sunset&timezone=auto`
+        )
+          .then((r) => r.json())
+          .then(setLocalWeather)
+          .catch(() => setLocalWeather(null));
+      },
+      () => setLocalWeather(null)
+    );
+
+    fetch("https://services.swpc.noaa.gov/json/alerts.json")
+      .then((r) => r.json())
+      .then((d) => setSpaceWeather((d || []).slice(0, 3)))
+      .catch(() => setSpaceWeather(null));
+  }, []);
+
+  useEffect(() => {
     if (!conflicts.length) return;
     const newsTimer = setInterval(() => {
       setActiveNews((current) => (current + 1) % conflicts.length);
@@ -78,6 +103,7 @@ export default function App() {
         <div className="links">
           <a href="#yardfindx">YardFindX</a>
           <a href="#systems">Systems</a>
+          <a href="#atmosphere">Atmosphere</a>
           <a href="#orbit">Orbit</a>
           
           <a href="#archive">Archive</a>
@@ -115,6 +141,62 @@ export default function App() {
 
 </section>
 
+
+
+      <section id="atmosphere" className="panel atmosphere">
+        <h2>Atmosphere</h2>
+        <p>A quiet local environment window for weather, wind, ultraviolet exposure and solar activity.</p>
+
+        <div className="weather-window">
+          <div className="weather-main">
+            <span>LOCAL CONDITIONS</span>
+            <h3>{localWeather ? `${localWeather.current.temperature_2m}°C` : "Location Required"}</h3>
+            <p>
+              {localWeather
+                ? `Humidity ${localWeather.current.relative_humidity_2m}% · Wind ${localWeather.current.wind_speed_10m} km/h`
+                : "Allow location access to show weather near you."}
+            </p>
+          </div>
+
+          <div className="weather-metrics">
+            <div>
+              <span>WIND</span>
+              <strong>{localWeather ? `${localWeather.current.wind_direction_10m}°` : "--"}</strong>
+              <p>Direction</p>
+            </div>
+
+            <div>
+              <span>UV INDEX</span>
+              <strong>{localWeather ? localWeather.daily.uv_index_max[0] : "--"}</strong>
+              <p>Daily max</p>
+            </div>
+
+            <div>
+              <span>SUNRISE</span>
+              <strong>{localWeather ? localWeather.daily.sunrise[0].split("T")[1] : "--"}</strong>
+              <p>Local time</p>
+            </div>
+
+            <div>
+              <span>SUNSET</span>
+              <strong>{localWeather ? localWeather.daily.sunset[0].split("T")[1] : "--"}</strong>
+              <p>Local time</p>
+            </div>
+          </div>
+
+          <div className="solar-window">
+            <span>SOLAR ACTIVITY</span>
+            <h3>{spaceWeather && spaceWeather.length ? "Space Weather Alerts" : "Quiet / Loading"}</h3>
+            {spaceWeather && spaceWeather.length ? (
+              spaceWeather.map((item, index) => (
+                <p key={index}>{item.message || item.product_id || "NOAA SWPC alert"}</p>
+              ))
+            ) : (
+              <p>Solar flare and space-weather alert feed from NOAA SWPC.</p>
+            )}
+          </div>
+        </div>
+      </section>
 
       <section id="yardfindx" className="panel">
         <h2>Flagship Product: YardFindX</h2>
