@@ -6,6 +6,7 @@ export default function App() {
   const [quakes, setQuakes] = useState([]);
   const [iss, setIss] = useState(null);
   const [conflicts, setConflicts] = useState([]);
+  const [conflictStatus, setConflictStatus] = useState("Loading autonomous GDELT feed...");
 
   useEffect(() => {
     fetch("https://api.open-meteo.com/v1/forecast?latitude=23.2419&longitude=69.6669&current=temperature_2m,wind_speed_10m,wind_direction_10m,weather_code&daily=sunrise,sunset,uv_index_max&timezone=auto")
@@ -194,8 +195,9 @@ export default function App() {
             <p>Live GDELT conflict feed with headlines, countries, timestamps and source links.</p>
 
             <div className="conflict-feed">
+              <p className="feed-status">{conflictStatus}</p>
               {conflicts.length === 0 ? (
-                <p>Loading verified global conflict feed...</p>
+                <p>Waiting for live items...</p>
               ) : (
                 conflicts.map((item, index) => (
                   <a
