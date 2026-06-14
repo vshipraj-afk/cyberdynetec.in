@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 export default function App() {
+  const [question, setQuestion] = useState("");
+  const [answer, setAnswer] = useState("Ask Cyberdyne what to look at today.");
   const [weather, setWeather] = useState(null);
   const [quakes, setQuakes] = useState([]);
   const [iss, setIss] = useState(null);
