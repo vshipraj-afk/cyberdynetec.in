@@ -138,7 +138,7 @@ export default function App() {
         <div className="logo">CYBERDYNE TECHNOLOGIES</div>
         <div className="links">
           <a href="#yardfindx">YardFindX</a>
-          <a href="https://cybermap.cyberdynetech.in" target="_blank" rel="noreferrer">CyberMap</a>
+          <a href="#cybermap">CyberMap</a>
           <a href="#systems">Systems</a>
           <a href="#assistant">Assistant</a>
           <a href="#atmosphere">Atmosphere</a>
